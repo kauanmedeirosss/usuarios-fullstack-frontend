@@ -20,12 +20,6 @@ export default function EditUser() {
     setUser({...user, [e.target.name]: e.target.value });
   };
 
-  /*
-  useEffect(() => {
-    loadUser()
-  }, [loadUser]);
-  */
-
   useEffect(() => {
   const loadUser = async () => {
     try {
@@ -43,13 +37,6 @@ export default function EditUser() {
     await axios.put(`http://localhost:8080/user/${id}`, user)
     navigate("/")
   };
-
-  /*
-  const loadUser = async () => {
-    const result = await axios.get(`http://localhost:8080/user/${id}`)
-    setUser(result.data)
-  };
-  */
 
   return (
     <div className="container">
